@@ -1,0 +1,62 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    z-index: 7;
+}
+.header-bg{
+    background-color: rgb(67,86,191);
+    transition: 0.5s;
+    
+}
+.nav-menu{
+    display:flex;
+}
+.nav-menu li{
+    padding: 0 1rem;
+}
+/* The "Link" in the js file is also the same as anchor tag in the html file */
+.nav-menu li a{
+     font-size: 1.2rem;
+     font-weight: 500;
+     color: white;
+     
+}
+.hamburger{
+    display: none;
+}
+/* For navbar responsiveness */
+@media screen and (max-width:1040px) {
+    .nav-menu{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+        /* background-color: rgba(0,0, 0, 0.9);   */
+        background-color: rgb(67,86,191);   
+        position: absolute;
+        top:0;
+        right: -100%;
+        z-index: -100;
+        transition:0.2s;
+    }  
+    .nav-menu.active{
+        right: 0;
+
+    }
+    .nav-menu li{
+        padding: 1rem ;    
+
+    } 
+    .nav-menu li a {
+        font-size: 1.5rem;
+    }
+    .hamburger{
+        display: initial;
+    }
+}
